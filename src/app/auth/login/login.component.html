@@ -1,0 +1,10 @@
+<h3>Login Form</h3>
+<form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+  <input formControlName="email" type="email" required placeholder="Email"> <br>
+  <input formControlName="password" type="password" required placeholder="Password"> <br>
+  <button [disabled]="this.loginForm.invalid" type="submit">Submit</button>
+</form>
+
+<div style="margin-top: 20px;">
+  <strong>Requester Data</strong>: <br> {{ requestData$ | async | json }}
+</div>
